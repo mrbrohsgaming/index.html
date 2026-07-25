@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mrbrohs Gaming — WE DO GAMING</title>
+<meta name="description" content="Mrbrohs Gaming (@MRBROHSGAMING) — gameplay, community, and content for people who take their games seriously. Subscribe on YouTube.">
+
+<!-- Open Graph / link preview tags. Swap og:image for the real banner once uploaded. -->
+<meta property="og:title" content="Mrbrohs Gaming — WE DO GAMING">
+<meta property="og:description" content="Official site for the Mrbrohs Gaming YouTube channel. New uploads, community links, and channel stats.">
+<meta property="og:image" content="/assets/banner.jpg">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://mrbrohsgaming.com/">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Mrbrohs Gaming — WE DO GAMING">
+<meta name="twitter:description" content="Official site for the Mrbrohs Gaming YouTube channel.">
+<meta name="twitter:image" content="/assets/banner.jpg">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;600;700&family=Inter:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    --bg: #0d0f14;
+    --bg-raised: #12151c;
+    --bg-card: #171b24;
+    --line: #262b38;
+    --text: #eef0f5;
+    --text-dim: #9aa1b2;
+    --purple: #8b5cf6;
+    --blue: #3b82f6;
+    --gradient: linear-gradient(115deg, var(--purple) 0%, var(--blue) 100%);
+    --sub-red: #ff3b3b;
+    --font-display: 'Rajdhani', sans-serif;
+    --font-body: 'Inter', sans-serif;
+    --font-mono: 'Space Mono', monospace;
+  }
+
+  *{ margin:0; padding:0; box-sizing:border-box; }
+
+  html{ scroll-behavior:smooth; }
+
+  @media (prefers-reduced-motion: reduce){
+    html{ scroll-behavior:auto; }
+    *{ animation-duration:0.01ms !important; animation-iteration-count:1 !important; transition-duration:0.01ms !important; scroll-behavior:auto !important; }
+  }
+
+  body{
+    background:var(--bg);
+    color:var(--text);
+    font-family:var(--font-body);
+    line-height:1.6;
+    overflow-x:hidden;
+  }
+
+  img{ max-width:100%; display:block; }
+
+  a{ color:inherit; text-decoration:none; }
+
+  h1,h2,h3,h4{
+    font-family:var(--font-display);
+    text-transform:uppercase;
+    letter-spacing:0.02em;
+    font-weight:700;
+  }
+
+  .eyebrow{
+    font-family:var(--font-mono);
+    font-size:0.72rem;
+    letter-spacing:0.18em;
+    text-transform:uppercase;
+    color:var(--purple);
+    display:flex;
+    align-items:center;
+    gap:0.6rem;
+    margin-bottom:0.9rem;
+  }
+  .eyebrow::before{
+    content:'';
+    width:10px; height:10px;
+    background:var(--gradient);
+    display:inline-block;
+    clip-path:polygon(0 50%, 50% 0, 100% 50%, 50% 100%);
+  }
+
+  .wrap{ max-width:1180px; margin:0 auto; padding:0 1.5rem; }
+
+  /* Reveal-on-scroll */
+  .reveal{ opacity:0; transform:translateY(24px); transition:opacity 0.7s ease, transform 0.7s ease; }
+  .reveal.is-visible{ opacity:1; transform:translateY(0); }
+
+  /* ---------- NAV ---------- */
+  header.site-nav{
+    position:fixed; top:0; left:0; right:0; z-index:100;
+    background:rgba(13,15,20,0.75);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav-inner{
+    max-width:1180px; margin:0 auto; padding:0.9rem 1.5rem;
+    display:flex; align-items:center; justify-content:space-between;
+  }
+  .nav-logo{
+    font-family:var(--font-display); font-weight:700; font-size:1.15rem;
+    letter-spacing:0.03em; text-transform:uppercase;
+  }
+  .nav-logo span{
+    background:var(--gradient); -webkit-background-clip:text; background-clip:text; color:transparent;
+  }
+  .nav-links{ display:flex; gap:2rem; font-size:0.85rem; letter-spacing:0.04em; text-transform:uppercase; font-family:var(--font-display); font-weight:600; }
+  .nav-links a{ color:var(--text-dim); transition:color 0.2s ease; }
+  .nav-links a:hover, .nav-links a:focus-visible{ color:var(--text); }
+  .nav-cta{
+    background:var(--sub-red); color:#fff; font-family:var(--font-display);
+    font-weight:700; letter-spacing:0.03em; text-transform:uppercase;
+    padding:0.55rem 1.2rem; font-size:0.82rem;
+    border-radius:4px; border:none; cursor:pointer;
+    transition:filter 0.2s ease, transform 0.2s ease;
+  }
+  .nav-cta:hover, .nav-cta:focus-visible{ filter:brightness(1.15); transform:translateY(-1px); }
+  .nav-toggle{ display:none; }
+
+  /* ---------- HERO ---------- */
+  .hero{
+    position:relative;
+    min-height:100vh;
+    display:flex; flex-direction:column; justify-content:flex-end;
+    padding-top:6rem;
+  }
+  .hero-banner{
+    position:absolute; inset:0;
+    /* Swap the gradient below for: background-image:url('/assets/banner.jpg'); */
+    background:
+      radial-gradient(ellipse at 20% 20%, rgba(139,92,246,0.25), transparent 55%),
+      radial-gradient(ellipse at 80% 30%, rgba(59,130,246,0.22), transparent 55%),
+      repeating-linear-gradient(115deg, #10131a 0 2px, #0d0f14 2px 44px);
+    background-size: cover;
+  }
+  .hero-banner::after{
+    content:'';
+    position:absolute; inset:0;
+    background:linear-gradient(180deg, rgba(13,15,20,0.2) 0%, rgba(13,15,20,0.55) 60%, var(--bg) 100%);
+  }
+  .hero-content{
+    position:relative; z-index:2;
+    max-width:1180px; margin:0 auto; width:100%;
+    padding:0 1.5rem 4.5rem;
+  }
+  .hero-id{ display:flex; align-items:flex-end; gap:1.6rem; margin-bottom:1.6rem; flex-wrap:wrap; }
+  .profile-pic{
+    width:112px; height:112px; border-radius:50%;
+    border:3px solid var(--bg);
+    object-fit:cover;
+    background:var(--gradient);
+    box-shadow:0 0 0 2px rgba(139,92,246,0.5), 0 0 40px rgba(139,92,246,0.35);
+    flex-shrink:0;
+  }
+  .hero-handle{ font-family:var(--font-mono); font-size:0.85rem; color:var(--text-dim); }
+  h1.hero-title{
+    font-size:clamp(2.6rem, 7vw, 5.2rem);
+    line-height:0.95;
+    margin-bottom:0.6rem;
+  }
+  h1.hero-title .grad{
+    background:var(--gradient); -webkit-background-clip:text; background-clip:text; color:transparent;
+  }
+  .hero-tagline{
+    font-family:var(--font-mono);
+    color:var(--text-dim);
+    font-size:1rem;
+    letter-spacing:0.25em;
+    margin-bottom:2.2rem;
+  }
+  .btn-subscribe{
+    display:inline-flex; align-items:center; gap:0.6rem;
+    background:var(--sub-red); color:#fff;
+    font-family:var(--font-display); font-weight:700; font-size:1.05rem;
+    letter-spacing:0.03em; text-transform:uppercase;
+    padding:1rem 2rem; border-radius:6px;
+    box-shadow:0 0 0 1px rgba(255,59,59,0.4), 0 12px 30px -10px rgba(255,59,59,0.6);
+    transition:transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
+  }
+  .btn-subscribe:hover, .btn-subscribe:focus-visible{
+    transform:translateY(-2px);
+    filter:brightness(1.1);
+    box-shadow:0 0 0 1px rgba(255,59,59,0.6), 0 16px 34px -8px rgba(255,59,59,0.75);
+  }
+  .btn-subscribe svg{ width:20px; height:20px; }
+
+  /* ---------- STATS BAR ---------- */
+  .stats{
+    border-top:1px solid var(--line);
+    border-bottom:1px solid var(--line);
+    background:var(--bg-raised);
+  }
+  .stats-grid{
+    display:grid;
+    grid-template-columns:repeat(4, 1fr);
+  }
+  .stat-card{
+    padding:2.4rem 1.5rem;
+    text-align:center;
+    border-right:1px solid var(--line);
+    position:relative;
+  }
+  .stat-card:last-child{ border-right:none; }
+  .stat-card::before{
+    content:'';
+    position:absolute; top:0; left:50%; transform:translateX(-50%);
+    width:0; height:2px; background:var(--gradient);
+    transition:width 0.4s ease;
+  }
+  .stat-card:hover::before{ width:60%; }
+  .stat-icon{ color:var(--purple); margin-bottom:0.7rem; display:flex; justify-content:center; }
+  .stat-icon svg{ width:26px; height:26px; }
+  .stat-number{
+    font-family:var(--font-display); font-weight:700;
+    font-size:clamp(1.6rem, 3.2vw, 2.4rem);
+    background:var(--gradient); -webkit-background-clip:text; background-clip:text; color:transparent;
+  }
+  .stat-label{
+    font-family:var(--font-mono); font-size:0.7rem; letter-spacing:0.14em;
+    text-transform:uppercase; color:var(--text-dim); margin-top:0.4rem;
+  }
+
+  /* ---------- SECTION SHARED ---------- */
+  section{ padding:6.5rem 0; position:relative; }
+  .section-head{ max-width:640px; margin-bottom:3rem; }
+  .section-head h2{ font-size:clamp(1.9rem, 4vw, 2.8rem); margin-bottom:0.8rem; }
+  .section-head p{ color:var(--text-dim); font-size:1.05rem; }
+
+  /* ---------- ABOUT ---------- */
+  .about-layout{ display:grid; grid-template-columns:1.1fr 0.9fr; gap:4rem; align-items:start; }
+  .about-copy p{ color:var(--text-dim); margin-bottom:1.1rem; font-size:1.02rem; }
+  .about-copy strong{ color:var(--text); }
+  .social-grid{ display:grid; grid-template-columns:repeat(2,1fr); gap:0.9rem; }
+  .social-btn{
+    display:flex; align-items:center; gap:0.8rem;
+    background:var(--bg-card); border:1px solid var(--line);
+    padding:1rem 1.2rem; border-radius:8px;
+    font-family:var(--font-display); font-weight:600; letter-spacing:0.02em;
+    transition:border-color 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
+  }
+  .social-btn svg{ width:22px; height:22px; flex-shrink:0; color:var(--purple); }
+  .social-btn:hover, .social-btn:focus-visible{
+    border-color:var(--purple);
+    transform:translateY(-2px);
+    box-shadow:0 8px 24px -10px rgba(139,92,246,0.5);
+  }
+
+  /* ---------- FEATURED VIDEOS ---------- */
+  .video-grid{
+    display:grid;
+    grid-template-columns:repeat(3, 1fr);
+    gap:1.6rem;
+  }
+  .video-card{
+    background:var(--bg-card);
+    border:1px solid var(--line);
+    border-radius:10px;
+    overflow:hidden;
+    transition:transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+  }
+  .video-card:hover, .video-card:focus-within{
+    transform:translateY(-6px);
+    border-color:var(--purple);
+    box-shadow:0 18px 40px -16px rgba(139,92,246,0.45);
+  }
+  .video-thumb{
+    aspect-ratio:16/9;
+    background:
+      linear-gradient(135deg, rgba(139,92,246,0.35), rgba(59,130,246,0.3)),
+      repeating-linear-gradient(45deg, #171b24 0 8px, #14171f 8px 16px);
+    position:relative;
+    display:flex; align-items:center; justify-content:center;
+  }
+  .video-thumb .play{
+    width:52px; height:52px; border-radius:50%;
+    background:rgba(13,15,20,0.65);
+    border:1px solid rgba(255,255,255,0.25);
+    display:flex; align-items:center; justify-content:center;
+    color:#fff;
+  }
+  .video-thumb .play svg{ width:20px; height:20px; margin-left:2px; }
+  .video-meta{ padding:1.1rem 1.2rem 1.3rem; }
+  .video-meta h3{ font-size:1.05rem; text-transform:none; letter-spacing:0; margin-bottom:0.4rem; }
+  .video-views{ font-family:var(--font-mono); font-size:0.78rem; color:var(--text-dim); }
+  .videos-cta{ text-align:center; margin-top:3rem; }
+  .btn-outline{
+    display:inline-flex; align-items:center; gap:0.6rem;
+    border:1px solid var(--purple); color:var(--text);
+    font-family:var(--font-display); font-weight:600; letter-spacing:0.03em; text-transform:uppercase;
+    padding:0.9rem 1.8rem; border-radius:6px;
+    transition:background 0.25s ease, box-shadow 0.25s ease;
+  }
+  .btn-outline:hover, .btn-outline:focus-visible{
+    background:rgba(139,92,246,0.12);
+    box-shadow:0 0 24px -6px rgba(139,92,246,0.6);
+  }
+
+  /* ---------- COMMUNITY CTA ---------- */
+  .community{
+    background:var(--bg-raised);
+    border-top:1px solid var(--line);
+    border-bottom:1px solid var(--line);
+  }
+  .community-inner{
+    text-align:center;
+    max-width:680px; margin:0 auto;
+  }
+  .community h2{ font-size:clamp(2rem, 5vw, 3.2rem); margin-bottom:1rem; }
+  .community p{ color:var(--text-dim); margin-bottom:2.2rem; font-size:1.05rem; }
+  .community-actions{ display:flex; gap:1rem; justify-content:center; flex-wrap:wrap; margin-bottom:2.6rem; }
+
+  .notify-form{
+    display:flex; gap:0.7rem; max-width:420px; margin:0 auto; flex-wrap:wrap; justify-content:center;
+  }
+  .notify-form input[type="email"]{
+    flex:1; min-width:220px;
+    background:var(--bg-card); border:1px solid var(--line); color:var(--text);
+    padding:0.85rem 1.1rem; border-radius:6px; font-family:var(--font-body); font-size:0.95rem;
+  }
+  .notify-form input[type="email"]:focus-visible{ outline:2px solid var(--purple); outline-offset:2px; }
+  .notify-form button{
+    background:var(--gradient); color:#fff; border:none;
+    font-family:var(--font-display); font-weight:700; letter-spacing:0.03em; text-transform:uppercase;
+    padding:0.85rem 1.4rem; border-radius:6px; cursor:pointer;
+    transition:filter 0.2s ease;
+  }
+  .notify-form button:hover, .notify-form button:focus-visible{ filter:brightness(1.15); }
+  .notify-note{ font-family:var(--font-mono); font-size:0.72rem; color:var(--text-dim); margin-top:0.8rem; }
+
+  /* ---------- FOOTER ---------- */
+  footer{ padding:3.5rem 0 2.2rem; }
+  .footer-top{
+    display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:2rem;
+    padding-bottom:2.2rem; border-bottom:1px solid var(--line); margin-bottom:1.6rem;
+  }
+  .footer-logo{ font-family:var(--font-display); font-weight:700; font-size:1.3rem; text-transform:uppercase; margin-bottom:0.6rem; }
+  .footer-logo span{ background:var(--gradient); -webkit-background-clip:text; background-clip:text; color:transparent; }
+  .footer-tag{ color:var(--text-dim); font-size:0.9rem; max-width:280px; }
+  .footer-links{ display:flex; gap:2.5rem; flex-wrap:wrap; }
+  .footer-col h4{ font-size:0.78rem; letter-spacing:0.12em; color:var(--text-dim); margin-bottom:0.8rem; }
+  .footer-col a{ display:block; color:var(--text); font-size:0.9rem; margin-bottom:0.5rem; opacity:0.85; }
+  .footer-col a:hover{ opacity:1; color:var(--purple); }
+  .footer-social{ display:flex; gap:0.8rem; }
+  .footer-social a{
+    width:38px; height:38px; border-radius:50%; border:1px solid var(--line);
+    display:flex; align-items:center; justify-content:center; color:var(--text-dim);
+    transition:border-color 0.2s ease, color 0.2s ease;
+  }
+  .footer-social a:hover{ border-color:var(--purple); color:var(--purple); }
+  .footer-social svg{ width:17px; height:17px; }
+  .footer-bottom{
+    display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:1rem;
+    font-family:var(--font-mono); font-size:0.75rem; color:var(--text-dim);
+  }
+
+  /* ---------- RESPONSIVE ---------- */
+  @media (max-width: 900px){
+    .about-layout{ grid-template-columns:1fr; gap:2.6rem; }
+    .video-grid{ grid-template-columns:repeat(2, 1fr); }
+    .stats-grid{ grid-template-columns:repeat(2, 1fr); }
+    .stat-card:nth-child(2){ border-right:none; }
+    .stat-card{ border-bottom:1px solid var(--line); }
+  }
+  @media (max-width: 720px){
+    .nav-links{ display:none; }
+    .video-grid{ grid-template-columns:1fr; }
+    .footer-top{ flex-direction:column; }
+  }
+</style>
+</head>
+<body>
+
+<header class="site-nav">
+  <div class="nav-inner">
+    <a href="#top" class="nav-logo">MRBROHS<span>.</span></a>
+    <nav class="nav-links">
+      <a href="#about">About</a>
+      <a href="#videos">Videos</a>
+      <a href="#community">Community</a>
+    </nav>
+    <a class="nav-cta" href="https://youtube.com/@mrbrohsgaming" target="_blank" rel="noopener">Subscribe</a>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- ============ HERO ============ -->
+  <section class="hero">
+    <!-- Swap .hero-banner background in CSS for: background-image:url('/assets/banner.jpg'); -->
+    <div class="hero-banner"></div>
+    <div class="hero-content">
+      <div class="hero-id">
+        <img class="profile-pic" src="/assets/profile.jpg" alt="Mrbrohs Gaming channel profile picture" loading="lazy">
+        <span class="hero-handle">@MRBROHSGAMING</span>
+      </div>
+      <h1 class="hero-title">MRBROHS<br><span class="grad">GAMING</span></h1>
+      <p class="hero-tagline">WE DO GAMING</p>
+      <a class="btn-subscribe" href="https://youtube.com/@mrbrohsgaming" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8ZM9.6 15.5v-7l6.3 3.5-6.3 3.5Z"/></svg>
+        Subscribe on YouTube
+      </a>
+    </div>
+  </section>
+
+  <!-- ============ STATS BAR ============ -->
+  <!-- Replace bracketed placeholders with real numbers from YouTube Studio → Channel → Analytics -->
+  <section class="stats">
+    <div class="stats-grid">
+      <div class="stat-card reveal">
+        <div class="stat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M17 20v-2a4 4 0 0 0-4-4H7a4 4 0 0 0-4 4v2"/><circle cx="10" cy="7" r="4"/><path d="M22 20v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+        <div class="stat-number" data-count>[SUBSCRIBER_COUNT]</div>
+        <div class="stat-label">Subscribers</div>
+      </div>
+      <div class="stat-card reveal">
+        <div class="stat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M1 12s4-7.5 11-7.5S23 12 23 12s-4 7.5-11 7.5S1 12 1 12Z"/><circle cx="12" cy="12" r="3"/></svg></div>
+        <div class="stat-number" data-count>[TOTAL_VIEWS]</div>
+        <div class="stat-label">Total Views</div>
+      </div>
+      <div class="stat-card reveal">
+        <div class="stat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m10 9 5 3-5 3V9Z" fill="currentColor" stroke="none"/></svg></div>
+        <div class="stat-number" data-count>[VIDEO_COUNT]</div>
+        <div class="stat-label">Videos Uploaded</div>
+      </div>
+      <div class="stat-card reveal">
+        <div class="stat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg></div>
+        <div class="stat-number" data-count>[JOIN_DATE]</div>
+        <div class="stat-label">Joined YouTube</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ ABOUT ============ -->
+  <section id="about">
+    <div class="wrap about-layout">
+      <div class="about-copy reveal">
+        <div class="eyebrow">Who we are</div>
+        <h2>Gameplay first.<br>Community always.</h2>
+        <p>Mrbrohs Gaming is a channel built around one idea: <strong>we do gaming</strong>, no filler, no fluff. Expect regular uploads covering the games we're actually playing — co-op runs, competitive matches, blind playthroughs, and the occasional chaotic late-night session.</p>
+        <p>What keeps this channel going is the community around it. Every comment, clip suggestion, and Discord message shapes what gets played and covered next. If you're here for the games, you'll stay for the people.</p>
+      </div>
+      <div class="reveal">
+        <div class="social-grid">
+          <a class="social-btn" href="https://youtube.com/@mrbrohsgaming" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8ZM9.6 15.5v-7l6.3 3.5-6.3 3.5Z"/></svg>
+            YouTube
+          </a>
+          <a class="social-btn" href="#" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.3 4.4a17.5 17.5 0 0 0-4.3-1.3l-.2.4a12.8 12.8 0 0 1 3.8 1.9 15.9 15.9 0 0 0-13.2 0 12.8 12.8 0 0 1 3.8-1.9l-.2-.4A17.6 17.6 0 0 0 5.7 4.4C2.9 8.6 2.1 12.7 2.4 16.8a17.7 17.7 0 0 0 5.4 2.7l.7-1.1a11.4 11.4 0 0 1-1.9-.9l.5-.4a12.6 12.6 0 0 0 9.8 0l.5.4a11.4 11.4 0 0 1-1.9.9l.7 1.1a17.6 17.6 0 0 0 5.4-2.7c.4-4.7-.7-8.8-2.9-12.4ZM9 14.6c-.8 0-1.5-.8-1.5-1.7 0-1
